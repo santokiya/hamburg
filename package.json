@@ -1,29 +1,27 @@
 {
-  "name": "mvc_design",
-  "version": "1.0.0",
-  "description": "devour some burgers",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.14.2",
-    "express": "^4.13.3",
-    "express-handlebars": "^2.0.1",
-    "mysql": "^2.10.2"
-  },
-  "devDependencies": {
-    "handlebars-helper-css": "^0.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/santokiya/hamburg.git"
-  },
-  "bugs": {
-    "url": "https://github.com/santokiya/hamburg/issues"
-  },
-  "homepage": "https://github.com/santokiya/hamburg#readme"
+    "name": "mvc_design",
+    "version": "1.0.0",
+    "description": "devour some burgers",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.14.2",
+        "express": "^4.13.3",
+
+        "mysql": "^2.10.2"
+    },
+
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/santokiya/hamburg.git"
+    },
+    "bugs": {
+        "url": "https://github.com/santokiya/hamburg/issues"
+    },
+    "homepage": "https://github.com/santokiya/hamburg#readme"
 }
