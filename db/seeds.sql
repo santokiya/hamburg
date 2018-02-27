@@ -1,11 +1,9 @@
-INSERT INTO burgers (name) VALUES 
-    ('Royale with Cheese'),
+INSERT INTO burgers
+    (name) VALUES
     ('McRib'),
     ('Wagyu'),
-    ('Big Mac'),
     ('Pork Belly Smokehouse'),
     ('Angry Whopper'),
     ('Kimchi-Bulgogi'),
     ('Tru-Bloody'),
-    ('Fuddruckers'),
     ('Mos burger');

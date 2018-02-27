@@ -1,38 +1,65 @@
-<h1>Hamburg!</h1>
+<div class="container">
+	<div class="jumbotron">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJxiOAx1_cbjpghYyBfjdQGUsveGxhS72Yvb04_0lrBk2D-9wf" width="auto" height="auto">
+		<h1>Eat Burgers!!!</h1>
+	</div>
+	
 
-<h2>Eat a burger!</h2>
+	<div class="row">
 
-<ul>
-  {{#each burgers}}
-    {{#unless hungry}}
-      {{> burgers/burger-block hungry=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+	<div class="col-md-4 col-md-offset-1">
+	 <div class="panel-panel default">
+	 	<h1>Ready to Eat a Burger</h1>
+	 	<ul class="list-group">
+	 		{{#each burgers}}
+	 		 {{#unless this.devoured}}
+	 		 <li class="list-group-item">
+	 		  <div class="input-group">
+	 		  	<p class="lead">{{this._name}}</p>
+	 		  	<span class="input-group-btn">
 
-<h2>Burgers Eaten!</h2>
+	 		  		<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+	 		  			<input type="hidden" name="devoured" value="true">
+	 		  			<button class="btn btn-default btn-lg" type="submit">Devour!</button>
+	 		  		</form>
+	 		  	</span>
+	 		  </div>
+	 		 </li>
+	 		 {{/unless}}
+	 		{{/each}}
+	 	</ul>
 
-<ul>
-  {{#each burgers}}
-    {{#if hungry}}
-      {{> burgers/burger-block hungry=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+	 </div>
+	</div>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+	
+	<div class="row">
+		<div class="col-md-4 col-md-offset-2">
+			<h1>Devoured Burgers</h1>
+			<div class="panel panel-default">
+				<ul class="list-group">
+					{{#each burgers}}
+					 {{#if this.devoured}}
+					 <li class="list-group-item">
+					 	<p class="lead">{{this._name}}</p>
+					 </li>
+					 {{/if}}
+					  {{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
 
-  <div class="form-group">
-    <label for="bu">Burger Name:</label>
-    <input type="text" id="bu" name="name">
-  </div>
+	<div class="col-md-10 col-md-offset-1">
+		<p class="lead">add burger & click submit</p>
+		
+		<form class="create-update-form" action="burgers/create" method="POST">
+		 <div class="form-group">
+		 	<textarea class="form-control input-lg" type="text" name="_name" row="3"></textarea>
+		 </div>
+		 <button class="btn btn-default btn-lg" type="submit">Submit</button>
+		</form>
+	</div>
 
-  <div class="form-group">
-    <label for="hungr">Hungry?</label><br>
-    <input type="radio" name="hungry" value="1" checked> Hungry!<br>
-    <input type="radio" name="hungry" value="0"> Full
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+ </div>
+</div>
